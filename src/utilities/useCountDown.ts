@@ -21,10 +21,9 @@ const useCountdown = (minutes: number, seconds: number) => {
   console.log(min , sec)
 
   useEffect(() => {
-    if( min === 0 && sec === 0 ){
+    if( Number(min) === 0 && Number(sec) === 0 ){
       clearTimeout(timer)
       AuthService.logout()
-      return
     }
 
     runTimer()

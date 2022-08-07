@@ -21,7 +21,7 @@ const Dashboard  = () => {
 
     const [ userIsCreated, setUserIsCreated ] = useState(false)
     const [ userIsDeleted, setUserIsDeleted ] = useState(false)
-    const count = useCountdown(1, 0)
+    const count = useCountdown(10, 0)
     const [ updateWith, setUpdateWith ] = useState("")
     const [ locate, setLocate ] = useState("")
     const { id } = AuthService.getCurrentUser() !== null && AuthService.getCurrentUser()

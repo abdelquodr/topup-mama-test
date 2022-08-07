@@ -53,8 +53,6 @@ class AuthService {
 
   // create user
   createUser(name: string, job: string) {
-    const { token } = this.getCurrentUser()
-    if(!token)  return "Unauthorized User"
     return Axios.post(API_URL + "api/users",{
       name,
       job
