@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.js";
+import "./App.css"
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom"
+import {Login, Register, Home, Users} from "../src/views"
+
+
+export type InputStateType = { email: string, password: string, name: string, jobTitle: string};
+export type HandleInputType = { name: string, value: string }
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={ <Register /> } />
+        <Route path="/login" element={ <Login /> } />
+        <Route path="/home" element={ <Home /> } />
+        <Route path="/users" element={ <Users /> } />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
+
